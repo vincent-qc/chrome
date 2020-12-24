@@ -1,1 +1,81 @@
+:root {
+    --chrome-content-separator-color: none !important;
+    --toolbar-bgcolor: #1d1d1d !important;
+}
 
+.browserContainer {
+	background-color: black !important;
+}
+
+#TabsToolbar {
+    background-color: #0e0e0e;
+}
+
+.tabbrowser-tab {
+	--tab-line-color: rgb(250, 0, 0);
+}
+
+.tab-close-button:hover {
+    background-color: #111111;
+}
+
+/* Disable megabar expansion. Source: https://github.com/WesleyBranton/Remove-Firefox-Megabar/blob/master/remove_megabar.css */
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+    #urlbar[breakout][breakout-extend] {
+        top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+        left: 0 !important;
+        width: 100% !important;
+    }
+    
+    #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+        height: var(--urlbar-height) !important;
+        padding-block: 0 !important;
+        padding-inline: 0 !important;
+    }
+    
+    #urlbar[breakout][breakout-extend] > #urlbar-background {
+        animation-name: none !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .05) !important;
+    }
+}
+
+.bookmark-item:hover {
+    background-color: transparent !important;
+}
+
+#tabs-newtab-button:hover,
+#tabbrowser-tabs .tabs-newtab-button:hover{ background-color: var(--toolbarbutton-hover-background) }
+
+#tabs-newtab-button > .toolbarbutton-icon,
+#tabbrowser-tabs .tabs-newtab-button > .toolbarbutton-icon{
+  padding: 0 !important;
+  transform: scale(0.6);
+  background-color: transparent !important;
+}
+
+/* Back and Forward Buttons */
+
+#back-button > .toolbarbutton-icon {
+    list-style-image: url(http://puu.sh/nNmIC/afb1912a86.png) !important;
+    margin-bottom: 2px !important;
+    border: none !important;
+    background-color: transparent !important;
+}
+#forward-button {
+    list-style-image: url(http://puu.sh/nNmJ1/ea4c68de75.png) !important;
+}
+
+#back-button:hover, #forward-button:hover {
+    background: transparent !important;
+    background-color: var(--focus-tab-bg) !important;
+    opacity: 0.3 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#back-button:not([disabled="true"]):not([open="true"]):not(:active):hover > .toolbarbutton-icon, #back-button, #back-button .toolbarbutton-icon:hover, #back-button .toolbarbutton-icon, #forward-button .toolbarbutton-icon, #forward-button {
+   padding: 4px !important;
+   box-shadow: none !important;     
+   background-color: transparent !important;
+   max-width: 64px !important;
+}
