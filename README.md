@@ -1,2 +1,2 @@
 # Chrome
-My Firefox CSS Customizations
+> CSS customizations for my Firefox browser
